@@ -1,7 +1,6 @@
-from modeling.image_encoder import ImageEncoderViT
+from build_sam import sam_model_registry, build_sam_vit_b
 
+sam = build_sam_vit_b(checkpoint="build_sam_vit_b")
 
-model = ImageEncoderViT()
-
-for name, param in model.named_parameters():
+for name, param in sam.named_parameters():
     print(name, param.shape)
