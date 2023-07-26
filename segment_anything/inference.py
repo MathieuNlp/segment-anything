@@ -1,4 +1,4 @@
-from build_sam import sam_model_registry, build_sam_vit_b
+from build_sam import build_sam_vit_b
 
 sam = build_sam_vit_b(checkpoint="build_sam_vit_b")
 
