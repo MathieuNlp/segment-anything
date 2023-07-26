@@ -1,4 +1,4 @@
-from segment_anything.modeling.image_encoder import ImageEncoderViT
+from modeling.image_encoder import ImageEncoderViT
 
 
 model = ImageEncoderViT()
