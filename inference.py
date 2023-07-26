@@ -3,7 +3,8 @@ from segment_anything import SamPredictor, SamAutomaticMaskGenerator
 import requests
 import matplotlib.pyplot as plt
 import cv2
-
+import urllib.request
+import numpy as np
 
 def show_anns(anns):
     if len(anns) == 0:
@@ -27,7 +28,8 @@ sam_generator = SamAutomaticMaskGenerator(sam)
 
 # load image
 url = 'http://images.cocodataset.org/val2017/000000039769.jpg'
-image = cv2.imread(requests.get(url, stream=True).raw)
+url_response = urllib.request.urlopen(url)
+image = cv2.imdecode(np.array(bytearray(url_response.read()), dtype=np.uint8), -1)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 masks = sam_generator.generate(image)
 
