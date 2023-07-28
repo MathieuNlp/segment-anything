@@ -28,7 +28,7 @@ sam.to("cuda")
 sam_generator = SamAutomaticMaskGenerator(sam) 
 
 # load image
-url = 'https://img.freepik.com/premium-photo/glass-filled-with-water-isolated-white-background-isolated-white-background_629803-724.jpg?w=740'
+url = 'https://upload.wikimedia.org/wikipedia/commons/6/6a/PS3-Fat-Console-Set.jpg'
 url_response = urllib.request.urlopen(url)
 image = cv2.imdecode(np.array(bytearray(url_response.read()), dtype=np.uint8), -1)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
