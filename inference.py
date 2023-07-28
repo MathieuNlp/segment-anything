@@ -24,8 +24,8 @@ def show_anns(anns):
 
 # load model and load weights
 sam = build_sam_vit_h(checkpoint="sam_vit_h_4b8939.pth")
+sam.to("cuda")
 sam_generator = SamAutomaticMaskGenerator(sam) 
-sam_generator.to("cuda")
 
 # load image
 url = 'https://img.freepik.com/premium-photo/glass-filled-with-water-isolated-white-background-isolated-white-background_629803-724.jpg?w=740'
